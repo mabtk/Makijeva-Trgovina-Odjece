@@ -26,3 +26,6 @@ C:\Users\Marko Rakic\source\zadaci\Makijeva Trgovina\ConsoleApp4\obj\Debug\net8.
 C:\Users\Marko Rakic\source\zadaci\Makijeva Trgovina\ConsoleApp4\obj\Debug\net8.0\ConsoleApp4.pdb
 C:\Users\Marko Rakic\source\zadaci\Makijeva Trgovina\ConsoleApp4\obj\Debug\net8.0\ConsoleApp4.genruntimeconfig.cache
 C:\Users\Marko Rakic\source\zadaci\Makijeva Trgovina\ConsoleApp4\obj\Debug\net8.0\ref\ConsoleApp4.dll
+C:\Users\Marko Rakic\source\zadaci\Makijeva Trgovina\ConsoleApp4\obj\Debug\net8.0\ConsoleApp4.sourcelink.json
+C:\Users\Marko Rakic\source\zadaci\Makijeva Trgovina\ConsoleApp4\bin\Debug\net8.0\SpisakProizvoda.txt
+C:\Users\Marko Rakic\source\zadaci\Makijeva Trgovina\ConsoleApp4\bin\Debug\net8.0\SpisakRadnika.txt

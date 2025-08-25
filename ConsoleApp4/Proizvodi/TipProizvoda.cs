@@ -10,6 +10,9 @@ namespace ConsoleApp4.Proizvodi
     {
         Majica,
         Hlače,
-        Tene
+        Tene,
+        Dukserica,
+        Jakna,
+        Dodaci
     }
 }

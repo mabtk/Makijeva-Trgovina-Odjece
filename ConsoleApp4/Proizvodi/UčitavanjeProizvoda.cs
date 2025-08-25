@@ -14,11 +14,13 @@ namespace ConsoleApp4.Proizvodi
 {
     public class UčitavanjeProizvoda
     {
-        string putanja = "C:\\Users\\Marko Rakic\\Desktop\\SpisakProizvoda.txt";
-        bool postoji = File.Exists("C:\\Users\\Marko Rakic\\Desktop\\SpisakProizvoda.txt");
+       
         List<Proizvodi> spisakProizvoda = new List<Proizvodi>();
         public List<Proizvodi> UčitajProizvode()
         {
+            var a = AppDomain.CurrentDomain.BaseDirectory;
+            string putanja = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "SpisakProizvoda.txt");
+            bool postoji = File.Exists(putanja);
             spisakProizvoda.Clear();
             if (postoji)
             {
@@ -101,6 +103,7 @@ namespace ConsoleApp4.Proizvodi
 
             Proizvodi proizvodi = new NetestiraniProizvodi(5, "Nike Air Force 2", "Kul tenisice", new Cijena(40, Valuta.BAM), TipProizvoda.Tene, 40);
             spisakProizvoda.Add(proizvodi);
+            
             return spisakProizvoda;
         }
     }

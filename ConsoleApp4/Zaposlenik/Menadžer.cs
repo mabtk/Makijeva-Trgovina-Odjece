@@ -8,7 +8,8 @@ namespace ConsoleApp4.Zaposlenik
 {
     public class Menadžer : Zaposlenik
     {
-        public Menadžer(string imeZaposlenika, string prezimeZaposlenika, int godineZaposlenika, PolozajiRadnika polozajRadnika) : base(imeZaposlenika, prezimeZaposlenika, godineZaposlenika, polozajRadnika)
+        public Menadžer(string imeZaposlenika, string prezimeZaposlenika, int godineZaposlenika, string sifraZaposlenika, PolozajiRadnika polozajRadnika) : 
+            base(imeZaposlenika, prezimeZaposlenika, godineZaposlenika, sifraZaposlenika, polozajRadnika)
         {
         }
     }

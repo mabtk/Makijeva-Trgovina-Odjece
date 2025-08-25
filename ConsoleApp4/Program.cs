@@ -1,6 +1,7 @@
 ﻿// See https://aka.ms/new-console-template for more information
 using ConsoleApp4.CijenaProizvoda;
 using ConsoleApp4.Proizvodi;
+using ConsoleApp4.Ugovor;
 using ConsoleApp4.Zaposlenik;
 using System.ComponentModel.DataAnnotations;
 
@@ -31,14 +32,17 @@ Console.WriteLine("Dobrodošli u Makijevu trgovinu odjeće");
 Console.WriteLine("-------------------------------------");
 
 Console.WriteLine("Molimo logirajte se u aplikaciju.");
+UčitavanjeRadnika učitavanje = new UčitavanjeRadnika();
+var lista = učitavanje.UčitajRadnike();
+Console.WriteLine($"Broj učitanih radnika - {lista.Count}");
+Zaposlenik prijavljeniZaposlenik = učitavanje.LogIn();
 
 
 int opcija = 0;
 bool boolVrijednost = false;
-
 do
 {
-    Console.WriteLine("Molimo odaberite opciju:\n1. Provjera zaliha proizvoda\n2. Upravljanje zalihama proizvoda\n3. Ispis svih zaliha proizvoda\n4. Učitvanje proizvoda\n9. Izlaz iz aplikacije");
+    Console.WriteLine("Molimo odaberite opciju:\n1. Provjera zaliha proizvoda\n2. Upravljanje zalihama proizvoda\n3. Ispis svih zaliha proizvoda\n4. Učitvanje proizvoda\n5. Informacije o zaposleniku\n9. Izlaz iz aplikacije\n0. Testiranje metoda");
 
     nastavak = a;
 
@@ -142,13 +146,14 @@ do
                         }
                         int odabirProizvoda = int.Parse(Console.ReadLine());
                         proizvodi[odabirProizvoda - 1].ProdajaProizvoda();
-                        Console.WriteLine("Želite li nadopuniti još neki proizvod? (Y/N)");
+                        Console.WriteLine("Želite li prodati još neki proizvod? (Y/N)");
                         nastavak = Console.ReadKey(true);
                         Console.Clear();
                     }
                     break;
                 case 3:
                     Console.Clear();
+                    proizvodi = Proizvodi.Filtriranje();
                     foreach (var proizvod in proizvodi)
                     {
                         proizvod.DugiOpisProizvoda();
@@ -179,9 +184,47 @@ do
             Console.Clear();
             UčitavanjeProizvoda ucitavanje = new UčitavanjeProizvoda();
             proizvodi = ucitavanje.UčitajProizvode();
+            proizvodi = Proizvodi.SortiranjeProizvoda();
             Console.WriteLine($"Učitano {proizvodi.Count} proizvoda");
             Console.WriteLine("Kliknite bilo koju tipku za nastavak.");
             Console.ReadKey(true);
+            Console.Clear();
+            break;
+        case 5:
+            Console.Clear();
+            prijavljeniZaposlenik.InformacijeOZaposleniku();
+            Console.WriteLine("Kliknite bilo koju tipku za nastavak.");
+            Console.ReadKey(true);
+            Console.Clear();
+            break;
+        case 0:
+            List<TipProizvoda> listaTipova = Proizvodi.TipoviProizvoda();
+            for (int i = 0; i < listaTipova.Count; i++)
+            {
+                Console.WriteLine(listaTipova[i]);
+            }
+
+            List<Proizvodi[]> nizovi = Proizvodi.ChunkMetoda();
+            for (int i = 0; i < nizovi.Count; i++)
+            {
+                foreach (var niz in nizovi[i])
+                {
+                    Console.WriteLine($"ID: {niz.IdProizvoda}, Ime: {niz.ImeProizvoda}, Tip: {niz.TipProizvoda}");
+                }
+                Console.WriteLine("-----------------------");
+            }
+
+            bool allMetoda = false;
+            allMetoda = Proizvodi.AllMetoda();
+            if (allMetoda = true)
+            {
+                Console.WriteLine("Metoda je true.");
+            }
+            else
+            {
+                Console.WriteLine("Metoda je false.");
+            }
+            Console.ReadKey();
             Console.Clear();
             break;
         default:

@@ -6,10 +6,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using ConsoleApp4.Ugovor;
+using System.ComponentModel;
 
 namespace ConsoleApp4.Proizvodi
 {
-    public abstract class Proizvodi : IProdaja, IProizvodi
+    public class Proizvodi : IProdaja, IProizvodi
     {
         private int idProizvoda;
         private string imeProizvoda;
@@ -57,6 +58,8 @@ namespace ConsoleApp4.Proizvodi
             set { minimalnaKolicinaProizvoda = value; }
         }
 
+        public Proizvodi() { }
+
         public Proizvodi(int idProizvoda, string imeProizvoda, string? opisProizvoda, Cijena cijenaProizvoda, TipProizvoda tipProizvoda, int kolicinaProizvoda)
         {
             this.idProizvoda = idProizvoda;
@@ -88,25 +91,32 @@ namespace ConsoleApp4.Proizvodi
             if (kolicinaProizvoda >= maksimalnaKolicinaProizvoda)
             {
                 Console.WriteLine("Količina proizvoda je već na maksimalnoj količini. Ne možete nadopunjavati vaš inventar.");
-                return kolicinaProizvoda;
             }
             else
             {
                 Console.WriteLine("Koliko proizvoda želite dodati?");
-                int dodaniProizvodi = int.Parse(Console.ReadLine());
-                kolicinaProizvoda += dodaniProizvodi;
-
-                if (kolicinaProizvoda > maksimalnaKolicinaProizvoda)
+                int dodaniProizvodi = 0;
+               
+                if (!int.TryParse(Console.ReadLine(), out dodaniProizvodi))
                 {
-                    Console.WriteLine("Nadopunjena količina proizvoda je iznad maksimalne količine. Ne smijete dalje nadopunjavati vaš inventar vaš invetar.");
-                    return kolicinaProizvoda;
+                    Console.WriteLine("Molimo upišite točnu vrijednost");
                 }
                 else
                 {
-                    Console.WriteLine("Vaš je inventar uspješno nadopunjen.");
-                    return kolicinaProizvoda;
+
+                    kolicinaProizvoda += dodaniProizvodi;
+
+                    if (kolicinaProizvoda > maksimalnaKolicinaProizvoda)
+                    {
+                        Console.WriteLine("Nadopunjena količina proizvoda je iznad maksimalne količine. Ne smijete dalje nadopunjavati vaš inventar vaš invetar.");
+                    }
+                    else
+                    {
+                        Console.WriteLine("Vaš je inventar uspješno nadopunjen.");
+                    }
                 }
             }
+            return kolicinaProizvoda;
 
         }
 
@@ -129,6 +139,58 @@ namespace ConsoleApp4.Proizvodi
                 kolicinaProizvoda -= prodaniProizvodi;
                 return kolicinaProizvoda;
             }
+        }
+
+        public static List<Proizvodi> SortiranjeProizvoda()
+        {
+            UčitavanjeProizvoda učitavanje = new UčitavanjeProizvoda();
+            List<Proizvodi> proizvodi = učitavanje.UčitajProizvode();
+            proizvodi = (from proizvod in proizvodi
+                         orderby proizvod.imeProizvoda
+                         select proizvod).ToList();
+            return proizvodi;
+
+        }
+
+        public static List<Proizvodi> Filtriranje()
+        {
+            
+            Console.WriteLine("Pretražite proizvod");
+            string filter = Console.ReadLine();
+            UčitavanjeProizvoda učitavanje = new UčitavanjeProizvoda();
+            List<Proizvodi> proizvodi = učitavanje.UčitajProizvode();
+            proizvodi = (from proizvod in proizvodi
+                         where proizvod.imeProizvoda.ToLower().Contains(filter.ToLower())
+                         select proizvod
+                         ).Distinct().ToList();
+            return proizvodi;
+        }
+        public static List<TipProizvoda> TipoviProizvoda()
+        {
+            UčitavanjeProizvoda učitavanje = new UčitavanjeProizvoda();
+            List<Proizvodi> proizvodi = učitavanje.UčitajProizvode();
+            List<TipProizvoda> tipoviProizvoda = (from proizvod in proizvodi
+                                          select proizvod.tipProizvoda).Distinct().ToList();
+            return tipoviProizvoda;
+        }
+
+        public static List<Proizvodi[]> ChunkMetoda()
+        {
+            UčitavanjeProizvoda učitavanje = new UčitavanjeProizvoda();
+            List<Proizvodi> proizvodi = učitavanje.UčitajProizvode();
+            List<Proizvodi[]> tipoviProizvoda = (from proizvod in proizvodi
+                                                  select proizvod).Chunk(5).ToList();
+            return tipoviProizvoda;
+        }
+
+        public static bool AllMetoda()
+        {
+            bool allMetoda = false;
+            UčitavanjeProizvoda učitavanje = new UčitavanjeProizvoda();
+            List<Proizvodi> proizvodi = učitavanje.UčitajProizvode();
+            allMetoda = (from proizvod in proizvodi select proizvod)
+                        .All(proizvod => proizvod.kolicinaProizvoda > 1);
+            return allMetoda;
         }
     }
 }
