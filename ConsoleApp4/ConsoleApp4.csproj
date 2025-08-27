@@ -10,7 +10,10 @@
   <ItemGroup>
     <None Remove="SpisakProizvoda.txt" />
     <None Remove="SpisakRadnika.txt" />
+<<<<<<< HEAD
     <None Remove="SpisakTransakcija.txt" />
+=======
+>>>>>>> 7aeb7d6979d2cdf38f2459efe2b3a3860176b4c7
   </ItemGroup>
 
   <ItemGroup>
@@ -20,9 +23,12 @@
     <Content Include="SpisakRadnika.txt">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
+<<<<<<< HEAD
     <Content Include="SpisakTransakcija.txt">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
+=======
+>>>>>>> 7aeb7d6979d2cdf38f2459efe2b3a3860176b4c7
   </ItemGroup>
 
 </Project>

@@ -8,7 +8,11 @@ build_property.PlatformNeutralAssembly =
 build_property.EnforceExtendedAnalyzerRules = 
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = ConsoleApp4
+<<<<<<< HEAD
 build_property.ProjectDir = C:\Users\Marko Rakic\source\Trgovina odjece\Makijeva-Trgovina-Odjece-main (1)\Makijeva-Trgovina-Odjece-main\ConsoleApp4\
+=======
+build_property.ProjectDir = C:\Users\Marko Rakic\source\zadaci\Makijeva Trgovina\ConsoleApp4\
+>>>>>>> 7aeb7d6979d2cdf38f2459efe2b3a3860176b4c7
 build_property.EnableComHosting = 
 build_property.EnableGeneratedComInterfaceComImportInterop = 
 build_property.EffectiveAnalysisLevelStyle = 8.0

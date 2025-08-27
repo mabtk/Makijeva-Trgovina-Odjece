@@ -29,6 +29,7 @@ C:\Users\Marko Rakic\source\zadaci\Makijeva Trgovina\ConsoleApp4\obj\Debug\net8.
 C:\Users\Marko Rakic\source\zadaci\Makijeva Trgovina\ConsoleApp4\obj\Debug\net8.0\ConsoleApp4.sourcelink.json
 C:\Users\Marko Rakic\source\zadaci\Makijeva Trgovina\ConsoleApp4\bin\Debug\net8.0\SpisakProizvoda.txt
 C:\Users\Marko Rakic\source\zadaci\Makijeva Trgovina\ConsoleApp4\bin\Debug\net8.0\SpisakRadnika.txt
+<<<<<<< HEAD
 C:\Users\Marko Rakic\source\Trgovina odjece\Makijeva-Trgovina-Odjece-main (1)\Makijeva-Trgovina-Odjece-main\ConsoleApp4\bin\Debug\net8.0\SpisakProizvoda.txt
 C:\Users\Marko Rakic\source\Trgovina odjece\Makijeva-Trgovina-Odjece-main (1)\Makijeva-Trgovina-Odjece-main\ConsoleApp4\bin\Debug\net8.0\SpisakRadnika.txt
 C:\Users\Marko Rakic\source\Trgovina odjece\Makijeva-Trgovina-Odjece-main (1)\Makijeva-Trgovina-Odjece-main\ConsoleApp4\bin\Debug\net8.0\ConsoleApp4.exe
@@ -46,3 +47,5 @@ C:\Users\Marko Rakic\source\Trgovina odjece\Makijeva-Trgovina-Odjece-main (1)\Ma
 C:\Users\Marko Rakic\source\Trgovina odjece\Makijeva-Trgovina-Odjece-main (1)\Makijeva-Trgovina-Odjece-main\ConsoleApp4\obj\Debug\net8.0\ConsoleApp4.genruntimeconfig.cache
 C:\Users\Marko Rakic\source\Trgovina odjece\Makijeva-Trgovina-Odjece-main (1)\Makijeva-Trgovina-Odjece-main\ConsoleApp4\obj\Debug\net8.0\ref\ConsoleApp4.dll
 C:\Users\Marko Rakic\source\Trgovina odjece\Makijeva-Trgovina-Odjece-main (1)\Makijeva-Trgovina-Odjece-main\ConsoleApp4\bin\Debug\net8.0\SpisakTransakcija.txt
+=======
+>>>>>>> 7aeb7d6979d2cdf38f2459efe2b3a3860176b4c7

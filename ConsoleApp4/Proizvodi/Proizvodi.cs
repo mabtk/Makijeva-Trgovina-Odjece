@@ -10,6 +10,7 @@ using System.ComponentModel;
 
 namespace ConsoleApp4.Proizvodi
 {
+<<<<<<< HEAD
     public class Proizvod : IProdaja, IProizvodi
     {
         public int idProizvoda;
@@ -21,6 +22,18 @@ namespace ConsoleApp4.Proizvodi
         public static int maksimalnaKolicinaProizvoda = 50;
         public static int minimalnaKolicinaProizvoda = 10;
         public double ukupnaCijena;
+=======
+    public class Proizvodi : IProdaja, IProizvodi
+    {
+        private int idProizvoda;
+        private string imeProizvoda;
+        private string? opisProizvoda;
+        private Cijena cijenaProizvoda;
+        private TipProizvoda tipProizvoda;
+        public int kolicinaProizvoda;
+        private static int maksimalnaKolicinaProizvoda = 50;
+        private static int minimalnaKolicinaProizvoda = 10;
+>>>>>>> 7aeb7d6979d2cdf38f2459efe2b3a3860176b4c7
 
         public int IdProizvoda
         {
@@ -58,6 +71,7 @@ namespace ConsoleApp4.Proizvodi
             get { return minimalnaKolicinaProizvoda; }
             set { minimalnaKolicinaProizvoda = value; }
         }
+<<<<<<< HEAD
         public double UkupnaCijena
         {
             get { return ukupnaCijena; }
@@ -73,6 +87,19 @@ namespace ConsoleApp4.Proizvodi
             CijenaProizvoda = cijenaProizvoda;
             TipProizvoda = tipProizvoda;
             KolicinaProizvoda = kolicinaProizvoda;
+=======
+
+        public Proizvodi() { }
+
+        public Proizvodi(int idProizvoda, string imeProizvoda, string? opisProizvoda, Cijena cijenaProizvoda, TipProizvoda tipProizvoda, int kolicinaProizvoda)
+        {
+            this.idProizvoda = idProizvoda;
+            this.imeProizvoda = imeProizvoda;
+            this.opisProizvoda = opisProizvoda;
+            this.cijenaProizvoda = cijenaProizvoda;
+            this.tipProizvoda = tipProizvoda;
+            this.kolicinaProizvoda = kolicinaProizvoda;
+>>>>>>> 7aeb7d6979d2cdf38f2459efe2b3a3860176b4c7
         }
 
         public virtual void KratkiOpisProizvoda()
@@ -83,6 +110,7 @@ namespace ConsoleApp4.Proizvodi
 
         public virtual void DugiOpisProizvoda()
         {
+<<<<<<< HEAD
             Proizvod proizvod = new();
             List<Proizvod> listaSvihProizvoda = proizvod.ForEachMetodaTest();
 
@@ -99,6 +127,10 @@ namespace ConsoleApp4.Proizvodi
                 Console.WriteLine($"Ukupna cijena skladišta - {p.UkupnaCijena}");
                 Console.WriteLine("-----------------------------------");
             }
+=======
+            Console.WriteLine($"Ime proizvoda - {imeProizvoda}\nID proizvoda - {idProizvoda}\nOpis proizvoda - {opisProizvoda}\nTip proizvoda - {tipProizvoda}\nKoličina proizvoda - {kolicinaProizvoda}\nCijena proizvoda - {cijenaProizvoda}\nMaksimalan broj proizvoda - {maksimalnaKolicinaProizvoda}\nMinimialan broj proizvoda - {minimalnaKolicinaProizvoda}");
+            Console.WriteLine("-----------------------------------");
+>>>>>>> 7aeb7d6979d2cdf38f2459efe2b3a3860176b4c7
         }
 
         public virtual void TestProizvoda()
@@ -160,10 +192,17 @@ namespace ConsoleApp4.Proizvodi
             }
         }
 
+<<<<<<< HEAD
         public static List<Proizvod> SortiranjeProizvoda()
         {
             UčitavanjeProizvoda učitavanje = new UčitavanjeProizvoda();
             List<Proizvod> proizvodi = učitavanje.UčitajProizvode();
+=======
+        public static List<Proizvodi> SortiranjeProizvoda()
+        {
+            UčitavanjeProizvoda učitavanje = new UčitavanjeProizvoda();
+            List<Proizvodi> proizvodi = učitavanje.UčitajProizvode();
+>>>>>>> 7aeb7d6979d2cdf38f2459efe2b3a3860176b4c7
             proizvodi = (from proizvod in proizvodi
                          orderby proizvod.imeProizvoda
                          select proizvod).ToList();
@@ -171,13 +210,21 @@ namespace ConsoleApp4.Proizvodi
 
         }
 
+<<<<<<< HEAD
         public static List<Proizvod> Filtriranje()
+=======
+        public static List<Proizvodi> Filtriranje()
+>>>>>>> 7aeb7d6979d2cdf38f2459efe2b3a3860176b4c7
         {
             
             Console.WriteLine("Pretražite proizvod");
             string filter = Console.ReadLine();
             UčitavanjeProizvoda učitavanje = new UčitavanjeProizvoda();
+<<<<<<< HEAD
             List<Proizvod> proizvodi = učitavanje.UčitajProizvode();
+=======
+            List<Proizvodi> proizvodi = učitavanje.UčitajProizvode();
+>>>>>>> 7aeb7d6979d2cdf38f2459efe2b3a3860176b4c7
             proizvodi = (from proizvod in proizvodi
                          where proizvod.imeProizvoda.ToLower().Contains(filter.ToLower())
                          select proizvod
@@ -187,17 +234,29 @@ namespace ConsoleApp4.Proizvodi
         public static List<TipProizvoda> TipoviProizvoda()
         {
             UčitavanjeProizvoda učitavanje = new UčitavanjeProizvoda();
+<<<<<<< HEAD
             List<Proizvod> proizvodi = učitavanje.UčitajProizvode();
+=======
+            List<Proizvodi> proizvodi = učitavanje.UčitajProizvode();
+>>>>>>> 7aeb7d6979d2cdf38f2459efe2b3a3860176b4c7
             List<TipProizvoda> tipoviProizvoda = (from proizvod in proizvodi
                                           select proizvod.tipProizvoda).Distinct().ToList();
             return tipoviProizvoda;
         }
 
+<<<<<<< HEAD
         public static List<Proizvod[]> ChunkMetoda()
         {
             UčitavanjeProizvoda učitavanje = new UčitavanjeProizvoda();
             List<Proizvod> proizvodi = učitavanje.UčitajProizvode();
             List<Proizvod[]> tipoviProizvoda = (from proizvod in proizvodi
+=======
+        public static List<Proizvodi[]> ChunkMetoda()
+        {
+            UčitavanjeProizvoda učitavanje = new UčitavanjeProizvoda();
+            List<Proizvodi> proizvodi = učitavanje.UčitajProizvode();
+            List<Proizvodi[]> tipoviProizvoda = (from proizvod in proizvodi
+>>>>>>> 7aeb7d6979d2cdf38f2459efe2b3a3860176b4c7
                                                   select proizvod).Chunk(5).ToList();
             return tipoviProizvoda;
         }
@@ -206,11 +265,16 @@ namespace ConsoleApp4.Proizvodi
         {
             bool allMetoda = false;
             UčitavanjeProizvoda učitavanje = new UčitavanjeProizvoda();
+<<<<<<< HEAD
             List<Proizvod> proizvodi = učitavanje.UčitajProizvode();
+=======
+            List<Proizvodi> proizvodi = učitavanje.UčitajProizvode();
+>>>>>>> 7aeb7d6979d2cdf38f2459efe2b3a3860176b4c7
             allMetoda = (from proizvod in proizvodi select proizvod)
                         .All(proizvod => proizvod.kolicinaProizvoda > 1);
             return allMetoda;
         }
+<<<<<<< HEAD
 
         public static List<int> IntersectMetoda()
         {
@@ -247,5 +311,7 @@ namespace ConsoleApp4.Proizvodi
              select proizvod).ToList();
             return listaSvihProizvoda;
         }
+=======
+>>>>>>> 7aeb7d6979d2cdf38f2459efe2b3a3860176b4c7
     }
 }

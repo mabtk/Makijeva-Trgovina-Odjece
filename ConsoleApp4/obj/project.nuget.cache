@@ -1,8 +1,14 @@
 {
   "version": 2,
+<<<<<<< HEAD
   "dgSpecHash": "UbY5cBo7mLE=",
   "success": true,
   "projectFilePath": "C:\\Users\\Marko Rakic\\source\\Trgovina odjece\\Makijeva-Trgovina-Odjece-main (1)\\Makijeva-Trgovina-Odjece-main\\ConsoleApp4\\ConsoleApp4.csproj",
+=======
+  "dgSpecHash": "hRMFl5GWg5w=",
+  "success": true,
+  "projectFilePath": "C:\\Users\\Marko Rakic\\source\\zadaci\\Makijeva Trgovina\\ConsoleApp4\\ConsoleApp4.csproj",
+>>>>>>> 7aeb7d6979d2cdf38f2459efe2b3a3860176b4c7
   "expectedPackageFiles": [],
   "logs": []
 }

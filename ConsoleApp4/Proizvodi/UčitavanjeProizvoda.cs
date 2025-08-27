@@ -15,8 +15,13 @@ namespace ConsoleApp4.Proizvodi
     public class UčitavanjeProizvoda
     {
        
+<<<<<<< HEAD
         List<Proizvod> spisakProizvoda = new List<Proizvod>();
         public List<Proizvod> UčitajProizvode()
+=======
+        List<Proizvodi> spisakProizvoda = new List<Proizvodi>();
+        public List<Proizvodi> UčitajProizvode()
+>>>>>>> 7aeb7d6979d2cdf38f2459efe2b3a3860176b4c7
         {
             var a = AppDomain.CurrentDomain.BaseDirectory;
             string putanja = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "SpisakProizvoda.txt");
@@ -72,7 +77,11 @@ namespace ConsoleApp4.Proizvodi
 
                         Cijena cijenaProizvoda = new Cijena(iznos, valuta);
 
+<<<<<<< HEAD
                         Proizvod proizvod;
+=======
+                        Proizvodi proizvod;
+>>>>>>> 7aeb7d6979d2cdf38f2459efe2b3a3860176b4c7
                         
                         switch (tipProizvoda)
                         {
@@ -100,6 +109,12 @@ namespace ConsoleApp4.Proizvodi
                 using FileStream fs = File.Create(putanja);
                 Console.WriteLine("Kreirana je nova datoteka jer prethodna nije postojala.");
             }
+<<<<<<< HEAD
+=======
+
+            Proizvodi proizvodi = new NetestiraniProizvodi(5, "Nike Air Force 2", "Kul tenisice", new Cijena(40, Valuta.BAM), TipProizvoda.Tene, 40);
+            spisakProizvoda.Add(proizvodi);
+>>>>>>> 7aeb7d6979d2cdf38f2459efe2b3a3860176b4c7
             
             return spisakProizvoda;
         }
